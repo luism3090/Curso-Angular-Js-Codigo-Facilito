@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dependency injection</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+	<script src="controlador.js"></script>
+
+
+</head>
+<body ng-app="MyApp">
+	<section ng-controller="controller1">
+		<div>
+			<label for="txt-comentario" >comentaio</label>
+			<input type="text" id="txt-comentario"  placeholder="ingrese un comentario" ng-model="nuevoComentario.comentario" >
+		</div>
+		<div>
+			<label for="txt-usuario">usuario</label>
+			<input type="text" id="txt-usuario" placeholder="ingrese su usuario" ng-model="nuevoComentario.usuario">
+		</div>
+		<div>
+			<button ng-click="addComent()">Comentar</button>
+		</div>
+		<div>
+			<h2>Comentarios</h2>
+			<ul>
+				<li ng-repeat="dato in arrayComentarios">
+					{{dato.usuario}} <strong>{{dato.comentario}}</strong>
+				</li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>
