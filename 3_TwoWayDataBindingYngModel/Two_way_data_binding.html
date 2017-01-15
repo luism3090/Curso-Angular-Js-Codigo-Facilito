@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Two way data binding y ng model</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+	<script src="controlador.js"></script>
+
+</head>
+<body ng-app="My_App">
+	
+	<section id="container-main" ng-controller="comentar">
+		<div id="cont-forms">
+			<div>
+				<label for="txtComentario">Comentario</label>
+				<input type="text" id="txtComentario" ng-model="nuevoComentario.comentario">
+			</div>
+			<div>
+				<label for="txtUsuario">Usuario</label>
+				<input type="text" id="txtUsuario" ng-model="nuevoComentario.usuario">
+			</div>
+		 	<div>
+		 		<button ng-click="agregarComentario()">Comentar</button>
+		 	</div>
+		</div>
+		<div id="cont-comentarios">
+			<h2>Comentarios</h2>
+			<ul>
+				<li ng-repeat="row in arrayComentarios" >
+					<strong>{{row.usuario}}</strong> {{row.comentario}}
+				</li>
+			</ul>
+		</div>
+	</section>
+
+</body>
+</html>
