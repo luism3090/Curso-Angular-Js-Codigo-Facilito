@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX con $http</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+	<script src="controlador.js"></script>
+
+</head>
+<body ng-app="Mi_App">
+	<div ng-controller="c1">
+		<div ng-repeat="posts in arrayPosts">
+			<h3>{{posts.title}}</h3>
+			<div>{{posts.body}}</div>
+		</div>
+	</div>
+</body>
+</html>
