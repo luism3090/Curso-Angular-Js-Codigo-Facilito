@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax con $http</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+	<script src="controlador.js"></script>
+</head>
+<body ng-app="mi_app">
+	<section id="container-main" ng-controller="controllerPosts">
+		<div id="container-form">
+			<div>
+				<label for="titulo">Título del posts</label>
+				<input type="text" id="titulo" ng-model="newPosts.title">
+			</div>
+			<div>
+				<label for="posts">Comenta el Posts</label>
+				<textarea  id="posts" ng-model="newPosts.body"></textarea>
+			</div>
+			<div>
+				<button ng-click="addPosts()">Publicar posts</button>
+			</div>
+		</div>
+		<div id="container-posts">
+			<h2>Posts</h2>
+			<div id="container-public-posts" >
+				<div ng-repeat="posts in arrayPosts">
+					<h3>{{posts.title}}</h3>
+					<div>{{posts.body}}</div>
+				</div>		
+			</div>
+		</div>
+	</section>
+</body>
+</html>
