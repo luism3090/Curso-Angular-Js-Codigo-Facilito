@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To Do List</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+	<script src="controlador.js"></script>
+
+</head>
+<body ng-app="app">
+	<section id="container-main" ng-controller="controlador1">
+		<form ng-submit="addActivity()">
+			<div>
+				<label for="actividad">Actividad</label>
+				<input type="text" id="actividad" placeholder="ingresar actividad" ng-model="newActivity.descripcion">
+			</div>
+			<div>
+				<label for="fecha">Fecha</label>
+				<input id="fecha" type="date" ng-model="newActivity.fecha" >
+			</div>
+			<div>
+				<button>Guardar actividad</button>
+			</div>
+		</form>
+		<div id="container-list">
+			<ul>
+				<li ng-repeat="activity in arrayActivities">
+					{{activity.descripcion}} - 
+					{{activity.fecha}}
+				</li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>
+

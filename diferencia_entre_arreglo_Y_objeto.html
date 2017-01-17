@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Diferencia entre arreglos y objetos literales javascript</title>
+</head>
+<body>
+	<script>
+
+	/*
+
+	Una duda muy frecuente es cuándo es necesario usar objetos llaves {}  o arreglos corchetes [] al trabajar con nuestro Javascript.
+	
+
+	var arreglo = [];
+	var objeto = {};
+
+
+	Arreglos [] : 
+
+		* Un arreglo basicamene es una lista o colección de elementos 
+		* Los arreglos se usan para series que poseen valores simples
+		
+
+	Los arreglos tienen una clave y un valor y que la clave puede ser un numérico o alfanumérico
+
+
+	*/
+
+	// arreglos con claves numéricas 
+
+		var arreglo1 = ["Jack","Basketball",30];
+
+		console.log(arreglo1);
+		console.log(arreglo1[0]);
+		console.log(arreglo1[1]);
+		console.log(arreglo1[2]);
+
+
+		console.log(" ");
+
+
+	//  arreglo con claves alfanuméricas 
+
+	var arreglo2 = [];
+
+	arreglo2["nombre"] = "Jack";
+	arreglo2.deporte = "Basketball";
+	arreglo2["edad"] = 30;
+
+	console.log(arreglo2);
+	console.log(arreglo2["nombre"]);
+	console.log(arreglo2.deporte);
+	console.log(arreglo2["edad"]);
+
+	/*
+	
+	Objetos {}
+
+		*  son utilizados para las series o colecciones de elementos en los que hay distintos objetos y propiedades con diferentes valores  
+		(objetos sobre objectos,funciornes, valores etc).
+		
+
+	*/
+
+	var object1 = 	{
+						0: "Jack",
+						1: "Basketball",
+						2: 30,
+						3: function ()
+						{
+							console.log("Estoy entrenando Basketball");
+						},
+						4: 	{ 
+								otrosDeportes:
+								{
+									1 : "Futball",
+									2 : "BeisBall",
+									3 : "Tenis"
+								}
+							}
+					}
+
+	console.log(object1);
+	console.log(object1[0]);
+	console.log(object1["1"]);
+	console.log(object1["3"]());
+	console.log(object1["4"].otrosDeportes[3]);
+
+
+	console.log(" ");
+
+
+	var object2 = 	{
+						nombre : "Jack",
+						deporte : "Basketball",
+						edad : 30,
+						entrenar: function()
+						{
+							console.log("Estoy entrenando Basketball");
+						},
+						otrosDeportes:
+										{
+											1 : "Futball",
+											2 : "BeisBall",
+											3 : "Tenis"
+										}
+					}
+
+	console.log(object2);
+	console.log(object2.nombre);
+	console.log(object2["deporte"]);
+	console.log(object2.edad);
+	console.log(object2.entrenar());
+	console.log(object2.otrosDeportes[3]);
+	
+
+	/*
+	
+	cada método tiene formas diferentes de tratar a sus elementos
+
+	Array Methods 
+
+concat()		Joins two or more arrays, and returns a copy of the joined arrays
+copyWithin()	Copies array elements within the array, to and from specified positions
+every()			Checks if every element in an array pass a test
+fill()			Fill the elements in an array with a static value
+filter()		Creates a new array with every element in an array that pass a test
+find()			Returns the value of the first element in an array that pass a test
+findIndex()		Returns the index of the first element in an array that pass a test
+forEach()		Calls a function for each array element
+indexOf()		Search the array for an element and returns its position
+isArray()		Checks whether an object is an array
+join()			Joins all elements of an array into a string
+lastIndexOf()	Search the array for an element, starting at the end, and returns its position
+map()			Creates a new array with the result of calling a function for each array element
+pop()			Removes the last element of an array, and returns that element
+push()			Adds new elements to the end of an array, and returns the new length
+reduce()		Reduce the values of an array to a single value (going left-to-right)
+reduceRight()	Reduce the values of an array to a single value (going right-to-left)
+reverse()		Reverses the order of the elements in an array
+shift()			Removes the first element of an array, and returns that element
+slice()			Selects a part of an array, and returns the new array
+some()			Checks if any of the elements in an array pass a test
+sort()			Sorts the elements of an array
+splice()		Adds/Removes elements from an array
+toString()		Converts an array to a string, and returns the result
+unshift()		Adds new elements to the beginning of an array, and returns the new length
+valueOf()		Returns the primitive value of an array
+
+
+
+
+	*/
+
+
+// eliminando un elemento de un array 
+
+var x = ["a","b","c","d","e","f","g"];
+x.splice(2,1);
+
+
+/* referencias 
+
+
+http://qbit.com.mx/blog/2013/01/13/arreglos-vs-objetos-en-javascript-diferencias/
+
+http://www.w3schools.com/jsref/jsref_obj_array.asp
+
+
+*/
+
+
+	</script>
+</body>
+</html>
