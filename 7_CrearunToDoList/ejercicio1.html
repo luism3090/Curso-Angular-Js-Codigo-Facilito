@@ -8,31 +8,34 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+
+	<script type="text/javascript" src="angular-local-storage.min.js"></script>
 
 	<script src="controlador.js"></script>
 
 </head>
-<body ng-app="app">
-	<section id="container-main" ng-controller="controlador1">
-		<form ng-submit="addActivity()">
+<body ng-app="My_app">
+	<section id="container-main" ng-controller="controller1">
+		<form id="container-form" >
 			<div>
 				<label for="actividad">Actividad</label>
-				<input type="text" id="actividad" placeholder="ingresar actividad" ng-model="newActivity.descripcion">
+				<input type="text" id="actividad" ng-model="newList.actividad">
 			</div>
 			<div>
 				<label for="fecha">Fecha</label>
-				<input id="fecha" type="date" ng-model="newActivity.fecha" >
+				<input type="date"  id="fecha" ng-model="newList.fecha">
 			</div>
 			<div>
-				<button>Guardar actividad</button>
+				<button ng-click="addList()">Agregarr a la lista</button>
+				<button ng-click="clearList()">limpiar </button>
 			</div>
 		</form>
+		<br><br>
 		<div id="container-list">
 			<ul>
-				<li ng-repeat="activity in arrayActivities">
-					{{activity.descripcion}} - 
-					{{activity.fecha}}
+				<li ng-repeat="list in arrayList">
+					{{list.actividad}} - {{list.fecha | date: 'short'}}
 				</li>
 			</ul>
 		</div>
